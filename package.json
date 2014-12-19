@@ -12,7 +12,9 @@
     "url": "https://github.com/ryanstevens/project123.git"
   },
   "author": "",
+  "license": "MIT",
   "dependencies": {
+    "hapi": "^7.5.2",
     "qs": "^2.3.3"
   }
 }
