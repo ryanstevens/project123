@@ -1,10 +1,15 @@
 #!/usr/bin/env node
 
 var http = require('http');
+var qs = require('qs');
+var parseUrl = require('url').parse;
 
 http.createServer(handleRequest)
     .listen(process.env.PORT || 8081);
 
 function handleRequest(req, res) {
-  res.end('hello world');
+  var url = parseUrl(req.url);
+  var name = qs.parse(url.query).name || 'nobody';
+
+  res.end('hello ' + name);
 }
